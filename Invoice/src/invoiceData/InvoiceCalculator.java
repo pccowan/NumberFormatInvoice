@@ -23,16 +23,27 @@ public class InvoiceCalculator {
 		System.out.println("What is the item Description?");
 		itemDescription = keyboard.nextLine();
 		
+		do{
 		System.out.println("What is the item Price?");
 		itemPrice = keyboard.nextDouble();
 		keyboard.nextLine();
+		if(itemPrice >1000){
+			System.out.println("Price cannot exceed $1000. Try again.");
+		}
+		}while(itemPrice >1000);
 		
 		System.out.println("What is the Inventory Number for this item?");
 		invNum = keyboard.nextLine();
 		
+		
+		do{
 		System.out.println("How many of this item were purchased?");
 		itemQuantity = keyboard.nextDouble();
 		keyboard.nextLine();
+		if(itemQuantity <1){
+			System.out.println("Innsufficient number of items selected. Select again.");
+		}
+		}while(itemQuantity < 1);
 		
 		
 		Item i = new Item(itemName, itemDescription, itemPrice, invNum, itemQuantity);

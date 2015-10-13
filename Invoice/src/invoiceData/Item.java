@@ -59,15 +59,14 @@ public class Item {
 	double subtotal = 0.0;
 
 	public double getSubtotal(Double qty) {
+
 		if (qty > 1) {
 			price = price * qty;
 			subtotal = price;
 		}else if (qty == 1) {
 			return subtotal = price;
-			
 		}
-	
-		
+				
 		return price;
 
 	}
